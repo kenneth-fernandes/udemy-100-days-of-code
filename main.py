@@ -1,5 +1,6 @@
 from src.day_1.band_name_generator import generate_band_name
 from src.day_2.tip_calculator import calculate_tip
+from src.day_3.treasure_island import find_the_treasure
 
 
 def execute_program(choice):
@@ -8,6 +9,8 @@ def execute_program(choice):
             generate_band_name()
         case "day_2":
             calculate_tip()
+        case "day_3":
+            find_the_treasure()
         case _:
             print("Wrong option selected! Please select the correct option.")
 

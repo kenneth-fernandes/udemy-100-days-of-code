@@ -1,2 +1,15 @@
 .DS_Store
 .idea
+src/day_1/__pycache__/*
+src/day_2/__pycache__/*
+src/day_3/__pycache__/*
+src/day_4/__pycache__/*
+src/day_5/__pycache__/*
+src/day_6/__pycache__/*
+src/day_7/__pycache__/*
+src/day_8/__pycache__/*
+src/day_9/__pycache__/*
+src/day_10/__pycache__/*
+src/day_11/__pycache__/*
+src/day_12/__pycache__/*
+src/__pycache__/*
