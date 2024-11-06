@@ -3,6 +3,7 @@ from src.day_2.tip_calculator import calculate_tip
 from src.day_3.treasure_island import find_the_treasure
 from src.day_4.rock_paper_scissors import play_rock_paper_scissors
 from src.day_5.password_generator import generate_password
+from src.day_7.hangman_game import play_game
 
 
 def execute_program(choice):
@@ -17,6 +18,8 @@ def execute_program(choice):
             play_rock_paper_scissors()
         case "day_5":
             generate_password()
+        case "day_7":
+            play_game()
         case _:
             print("Wrong option selected! Please select the correct option.")
 
