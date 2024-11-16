@@ -19,6 +19,7 @@ def ceaser_cipher():
                 result = decode(message, shift_number)
                 print(f"Here's the decoded result: {result}")
             case _:
+                print(f"Invalid operation '{direction}'. Please try again.")
                 continue
 
         continue_running = input("Type 'yes' if you want to go again. Otherwise type 'no'.\n").lower() == 'yes'
