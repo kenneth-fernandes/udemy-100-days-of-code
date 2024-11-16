@@ -27,8 +27,11 @@ def ceaser_cipher():
 def encode(message, shift_number):
     result = ""
     for ch in message:
-        index = letters.index(ch) + shift_number % len(letters)
-        result += letters[index]
+        if ch.isalpha():
+            index = letters.index(ch) + shift_number % len(letters)
+            result += letters[index]
+        else:
+            result += ch
 
     return result
 
@@ -36,7 +39,10 @@ def encode(message, shift_number):
 def decode(message, shift_number):
     result = ""
     for ch in message:
-        index = letters.index(ch) - shift_number % len(letters)
-        result += letters[index]
+        if ch.isalpha():
+            index = letters.index(ch) - shift_number % len(letters)
+            result += letters[index]
+        else:
+            result += ch
 
     return result
