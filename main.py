@@ -4,6 +4,7 @@ from src.day_3.treasure_island import find_the_treasure
 from src.day_4.rock_paper_scissors import play_rock_paper_scissors
 from src.day_5.password_generator import generate_password
 from src.day_7.hangman_game import play_game
+from src.day_8.ceasar_cipher import ceaser_cipher
 
 
 def execute_program(choice):
@@ -20,6 +21,8 @@ def execute_program(choice):
             generate_password()
         case "day_7":
             play_game()
+        case "day_8":
+            ceaser_cipher()
         case _:
             print("Wrong option selected! Please select the correct option.")
 
