@@ -1,6 +1,6 @@
 import random
-from src.day_7.hangman_words import word_list
-from src.day_7.hangman_pics import hangman_pics
+from src.day_07.hangman_words import word_list
+from src.day_07.hangman_pics import hangman_pics
 
 
 def play_game():
