@@ -6,6 +6,7 @@ from src.day_5.password_generator import generate_password
 from src.day_7.hangman_game import play_game
 from src.day_8.ceasar_cipher import ceaser_cipher
 from src.day_9.secret_auction import start_secret_auction
+from src.day_10.calculator import calculator
 
 
 def execute_program(choice):
@@ -26,6 +27,8 @@ def execute_program(choice):
             ceaser_cipher()
         case "day_9":
             start_secret_auction()
+        case "day_10":
+            calculator()
         case _:
             print("Wrong option selected! Please select the correct option.")
 
