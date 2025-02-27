@@ -7,7 +7,7 @@ from src.day_07.hangman_game import play_game
 from src.day_08.ceasar_cipher import ceaser_cipher
 from src.day_09.secret_auction import start_secret_auction
 from src.day_10.calculator import calculator
-
+from src.day_11.blackjack import play_game
 
 def execute_program(choice):
     match choice:
@@ -29,6 +29,8 @@ def execute_program(choice):
             start_secret_auction()
         case "day_10":
             calculator()
+        case "day_11":
+            play_game()
         case _:
             print("Wrong option selected! Please select the correct option.")
 
