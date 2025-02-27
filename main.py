@@ -8,6 +8,8 @@ from src.day_08.ceasar_cipher import ceaser_cipher
 from src.day_09.secret_auction import start_secret_auction
 from src.day_10.calculator import calculator
 from src.day_11.blackjack import play_game
+from src.day_12.guessinggame import guess_number
+
 
 def execute_program(choice):
     match choice:
@@ -31,6 +33,8 @@ def execute_program(choice):
             calculator()
         case "day_11":
             play_game()
+        case "day_12":
+            guess_number()
         case _:
             print("Wrong option selected! Please select the correct option.")
 
