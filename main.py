@@ -11,6 +11,7 @@ from src.day_11.blackjack import play_game as play_blackjack_game
 from src.day_12.guessinggame import guess_number
 from src.day_14.v1.higher_lower_game import play_game as play_higher_lower_game_v1
 from src.day_14.v2.higher_lower_game import play_game as play_higher_lower_game_v2
+from src.day_15.coffee_machine import start_machine as start_coffee_machine
 
 
 def execute_program(choice):
@@ -41,6 +42,8 @@ def execute_program(choice):
             play_higher_lower_game_v1()
         case "day_14_v2":
             play_higher_lower_game_v2()
+        case "day_15":
+            start_coffee_machine()
         case _:
             print("Wrong option selected! Please select the correct option.")
 
