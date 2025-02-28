@@ -3,13 +3,14 @@ from src.day_02.tip_calculator import calculate_tip
 from src.day_03.treasure_island import find_the_treasure
 from src.day_04.rock_paper_scissors import play_rock_paper_scissors
 from src.day_05.password_generator import generate_password
-from src.day_07.hangman_game import play_game
+from src.day_07.hangman_game import play_game as play_hangman_game
 from src.day_08.ceasar_cipher import ceaser_cipher
 from src.day_09.secret_auction import start_secret_auction
 from src.day_10.calculator import calculator
-from src.day_11.blackjack import play_game
+from src.day_11.blackjack import play_game as play_blackjack_game
 from src.day_12.guessinggame import guess_number
-from src.day_14.v1.higher_lower import play_game
+from src.day_14.v1.higher_lower_game import play_game as play_higher_lower_game_v1
+from src.day_14.v2.higher_lower_game import play_game as play_higher_lower_game_v2
 
 
 def execute_program(choice):
@@ -25,7 +26,7 @@ def execute_program(choice):
         case "day_05":
             generate_password()
         case "day_07":
-            play_game()
+            play_hangman_game()
         case "day_08":
             ceaser_cipher()
         case "day_09":
@@ -33,11 +34,13 @@ def execute_program(choice):
         case "day_10":
             calculator()
         case "day_11":
-            play_game()
+            play_blackjack_game()
         case "day_12":
             guess_number()
-        case "day_14":
-            play_game()
+        case "day_14_v1":
+            play_higher_lower_game_v1()
+        case "day_14_v2":
+            play_higher_lower_game_v2()
         case _:
             print("Wrong option selected! Please select the correct option.")
 
