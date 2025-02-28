@@ -45,7 +45,7 @@ def execute_program(choice):
         case "day_15":
             start_coffee_machine()
         case _:
-            print("Wrong option selected! Please select the correct option.")
+            print("Wrong option selected! Please re-run and select the correct option.")
 
 
 def execute_main():

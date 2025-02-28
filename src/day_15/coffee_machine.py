@@ -1,20 +1,17 @@
 from src.day_15.coffee_menu_resources import MENU, resources
 
-on_status = True
 profit = 0
 
 def start_machine() -> None:
-    global on_status
 
-    while on_status:
-
+    while True:
         customer_choice = input("What would you like? (espresso/latte/cappuccino): ").strip().lower()
 
         match customer_choice:
             case "report":
                 print_machine_report()
             case "off":
-                on_status = False
+                break
             case "espresso" | "latte" | "cappuccino":
                 process_coffee_request(customer_choice)
             case _:
@@ -25,24 +22,20 @@ def start_machine() -> None:
 
 def process_coffee_request(coffee_type) -> None:
     global profit
-    ingredients: {} = MENU[coffee_type]['ingredients']
+    ingredients: dict[str, int] = MENU[coffee_type]['ingredients']
 
     # Checking if resources are sufficient for preparing a coffee
-    is_resources_sufficient_str: str = check_resources_sufficient(coffee_type, ingredients)
-    if is_resources_sufficient_str != "sufficient":
-        print(is_resources_sufficient_str)
+    if not check_resources_sufficient(coffee_type, ingredients):
         return
 
     customer_amount = collect_and_process_coins()
 
     # Checking if user has enough money to buy a coffee
-    is_money_sufficient_str: str = check_money_sufficient(coffee_type, customer_amount)
-    if is_money_sufficient_str != "sufficient":
-        print(is_money_sufficient_str)
+    if not check_money_sufficient(coffee_type, customer_amount):
         return
 
     # calculate cost and remaining change
-    remaining_amount = customer_amount - MENU[coffee_type]['cost']
+    remaining_amount = round(customer_amount - MENU[coffee_type]['cost'], 2)
 
     # Update the profit of the coffee machine
     profit += MENU[coffee_type]['cost']
@@ -53,7 +46,7 @@ def process_coffee_request(coffee_type) -> None:
 
     # Return remaining change to the customer
     if remaining_amount > 0.0:
-        print(f"Here is ${remaining_amount} in change.")
+        print(f"Here is your ${remaining_amount} in change.")
 
     print(f"Here is your {coffee_type} Enjoy!")
 
@@ -75,14 +68,16 @@ def collect_and_process_coins() -> float:
     return quarters_amount + dimes_amount + nickles_amount + pennies_amount
 
 
-def check_money_sufficient(coffee_type: str, customer_amount: float) -> str:
-    return "Sorry that's not enough money. Money refunded." \
-        if MENU[coffee_type]['cost'] > customer_amount \
-        else "sufficient"
+def check_money_sufficient(coffee_type: str, customer_amount: float) -> bool:
+    if MENU[coffee_type]['cost'] > customer_amount:
+        print("Sorry that's not enough money. Money refunded.")
+        return False
+    return True
 
 
-def check_resources_sufficient(coffee_type: str, ingredients: {}) -> str:
+def check_resources_sufficient(coffee_type: str, ingredients: dict[str, int]) -> bool:
     for key, value in ingredients.items():
         if value > resources[key]:
-            return f"Sorry there is not enough {key}."
-    return "sufficient"
+            print(f"Sorry there is not enough {key}.")
+            return False
+    return True
