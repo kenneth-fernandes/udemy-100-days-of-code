@@ -1,4 +1,4 @@
-from .art import logo
+from src.day_12.art import logo
 import random
 
 EASY_LEVEL_GUESSES = 10

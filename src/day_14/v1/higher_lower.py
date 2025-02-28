@@ -1,6 +1,6 @@
 import random
-from .art import higher_lower_logo, versus_logo
-from .followers import celebrities
+from src.day_14.v1.art import higher_lower_logo, versus_logo
+from src.day_14.v1.followers import celebrities
 
 
 def play_game():

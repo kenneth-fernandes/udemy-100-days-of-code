@@ -1,5 +1,5 @@
 import random
-from .art import logo
+from src.day_11.art import logo
 
 def play_game():
 

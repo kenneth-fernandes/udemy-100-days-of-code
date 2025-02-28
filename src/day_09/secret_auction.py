@@ -1,4 +1,4 @@
-from ..day_09.art import gavel
+from src.day_09.art import gavel
 
 
 bids = {}

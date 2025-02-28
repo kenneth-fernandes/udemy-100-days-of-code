@@ -1,4 +1,4 @@
-from ..day_10.art import logo
+from src.day_10.art import logo
 
 
 def add(n1, n2):
