@@ -13,6 +13,7 @@ from src.day_14.v1.higher_lower_game import play_game as play_higher_lower_game_
 from src.day_14.v2.higher_lower_game import play_game as play_higher_lower_game_v2
 from src.day_15.coffee_machine import start_machine as start_coffee_machine
 from src.day_16.coffee_machine_driver import CoffeeMachineDriver
+from src.day_17.quiz_project import QuizProject
 
 
 def execute_program(choice):
@@ -47,6 +48,8 @@ def execute_program(choice):
             start_coffee_machine()
         case "day_16":
             CoffeeMachineDriver.get_instance().start_coffee_machine()
+        case "day_17":
+            QuizProject.play_game()
         case _:
             print("Wrong option selected! Please re-run and select the correct option.")
 
